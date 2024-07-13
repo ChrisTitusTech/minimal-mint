@@ -52,6 +52,9 @@ libreoffice-help-fr \
 libreoffice-help-it \
 libreoffice-help-ru \
 libreoffice-help-en-us \
+
+sudo rm -r /etc/libreoffice/registry/res  \
+
 thunderbird-locale-en \
 thunderbird-locale-en-gb \
 thunderbird-locale-en-us \
