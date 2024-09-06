@@ -26,4 +26,3 @@ do
 done < "packages.txt"
 
 printf "\n""Packages removed successfully!"
-
