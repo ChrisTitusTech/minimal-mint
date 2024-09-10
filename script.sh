@@ -9,20 +9,21 @@ fi
 
 # Warn user
 echo "This script removes a LOT of packages!"
-read -p "Do you want to continue? (y/N) " continue
+read -p "Do you want to continue? (y/N) " yn
 
-case "$continue" in
+case "$yn" in
   Y|y*);;
   *) exit 1;;
 esac
-
 
 printf "Removing packages...""\n"
 
 while read package
 do
-  echo $package
-  apt purge --auto-remove -y "$package"
+  dpkg -P "$package"
 done < "packages.txt"
+
+printf "Running 'apt-get autopurge'...""\n"
+apt-get autopurge
 
 printf "\n""Packages removed successfully!"
